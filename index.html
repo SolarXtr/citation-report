@@ -604,6 +604,17 @@ function applyFilters() {
   applySort();
 }
 
+function fixStickyHeader() {
+  const controls = document.querySelector('.controls');
+  const thead = document.querySelector('thead');
+  const resizeObserver = new ResizeObserver(() => {
+    thead.style.top = controls.offsetHeight + 'px';
+  });
+  resizeObserver.observe(controls);
+  thead.style.top = controls.offsetHeight + 'px';
+}
+fixStickyHeader();
+  
 function applySort() {
   filtered.sort((a, b) => {
     let av = a[sortCol], bv = b[sortCol];
