@@ -336,14 +336,53 @@
   }
   .empty-state svg { margin-bottom: 12px; opacity: 0.4; }
 
+  .topnav {
+    background: var(--navy);
+    border-bottom: 3px solid var(--teal);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    height: 52px;
+  }
+  .topnav .brand {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    margin-right: 32px;
+    white-space: nowrap;
+  }
+  .topnav a.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 0 14px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color .15s, border-color .15s;
+  }
+  .topnav a.nav-link:hover { color: #fff; }
+  .topnav a.nav-link.active { color: var(--teal); border-bottom-color: var(--teal); }
+
   @media (max-width: 768px) {
     .page-header { padding: 16px; }
+    .topnav { padding: 0 16px; }
     .controls { padding: 10px 12px; }
     .td-title { min-width: 180px; }
   }
 </style>
 </head>
 <body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">📊 Citation Dashboard</a>
+  <a href="index.html" class="nav-link active">ตารางบทความ</a>
+  <a href="about.html" class="nav-link">เกี่ยวกับ</a>
+</nav>
 
 <header class="page-header">
   <h1>รายงานผลงานวิชาการ — Citation & H-Index Dashboard</h1>
